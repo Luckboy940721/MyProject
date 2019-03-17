@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dubbo-springboot</artifactId>
+        <groupId>com.xiaoze.dubbo</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>LogbackProject</artifactId>
+
+    <!--引入logback的maven依赖文件 slf绑定logback-->
+    <dependencies>
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.3</version>
+        <exclusions>
+            <exclusion>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+    </dependencies>
+    <!--使用注意事项如下：-->
+    <!--由于引入该maven配置，会出现多个版本的logback-classic,
+    因此使用的时候要保持logback-classic和logback-core的版本匹配，否则运行会报错-->
+
+</project>
